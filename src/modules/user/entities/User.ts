@@ -6,13 +6,11 @@ interface UserSchema {
   password: string;
   name: string;
   createdAt: Date;
-  updatedAt?: Date;
-  deletedAt?: Date;
 }
 
 export class User {
-  props: UserSchema;
-  _id: string;
+  private props: UserSchema;
+  private _id: string;
 
   constructor(props: Replace<UserSchema, { createdAt?: Date }>, id?: string) {
     this.props = {
